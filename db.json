@@ -1,0 +1,17 @@
+{
+	"demo1": {
+		"ret": true,
+		"data1": {
+			"digital": 371570,
+			"daily": 296016,
+			"consumer": 161953,
+			"canvasdata": [
+				{ "name": "May", "value": 32.68 },
+				{ "name": "Tom", "value": 12.43 },
+				{ "name": "Mary", "value": 12.26 },
+				{ "name": "Tim", "value": 16.87 },
+				{ "name": "Tony", "value": 25.75 }
+			]
+		}
+	}
+}

@@ -1,0 +1,17 @@
+$bgColor: #0a002a;
+$color: #60cbff;
+
+@mixin ellipsis(){
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@mixin box(){
+	background: rgba(36, 53, 135, 0.3);
+	border: 2px solid #243587;
+}
+@mixin flex(){
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

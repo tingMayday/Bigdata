@@ -1,0 +1,50 @@
+.container {
+  // width: 1660px;
+  padding: 0 5rem;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+#pieChart{
+	width: 300px;
+	height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	float: left;
+}
+
+.title{
+	padding: 2rem 0;
+	font-size: 2rem;
+	font-weight: bold;
+	border-bottom: 5px solid #23cbff;
+	@include flex();
+	span{
+		padding: 0 2rem;
+	}
+	.s-title{
+		padding-left: 0;
+		color: #fff;
+		border-right: 2px solid #eee;
+	}
+	.time{
+		color: #fff;
+		font-size: 1rem;
+	}
+}
+
+.con{
+	padding: 1rem 0;
+	@include flex()
+}
+.box{
+	flex: 1;
+	padding: 2rem;
+    box-sizing: border-box;
+	@include box()
+    .box-title{
+    	color: #4666FF;
+    }
+    .box-con{
+    	@include flex();
+    }
+}
