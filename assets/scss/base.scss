@@ -1,5 +1,5 @@
 // 写一些需要全局设置的一些基本样式，例如清除浮动
-@charset "utf-8";html{background-color:#fff;color:#000;font-size:12px}
+@charset "utf-8";html{background-color:#fff;color:#000;}
 body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,figure,form,fieldset,legend,input,textarea,button,p,blockquote,th,td,pre,xmp{margin:0;padding:0}
 body,input,textarea,button,select,pre,xmp,tt,code,kbd,samp{line-height:1.5;font-family:tahoma,arial,"Hiragino Sans GB",simsun,sans-serif}
 h1,h2,h3,h4,h5,h6,small,big,input,textarea,button,select{font-size:100%}
@@ -21,7 +21,17 @@ mark{background-color:transparent}
 a,ins,s,u,del{text-decoration:none}
 sup,sub{vertical-align:baseline}
 html {overflow-x: hidden;height: 100%;font-size: 50px;-webkit-tap-highlight-color: transparent;}
-body {font-family: Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;background: $bgColor;color: $color;font-size: .28em;line-height: 1;-webkit-text-size-adjust: none;}
+body {font-family: Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;background: $bgColor;color: $color;font-size: .8em;line-height: 1;-webkit-text-size-adjust: none;}
 hr {height: .02rem;margin: .1rem 0;border: medium none;border-top: .02rem solid #cacaca;}
 a {color: #25a4bb;text-decoration: none;}
 img{width: 100%;}
+.w10{width: 10%;}
+.w20{width: 20%;}
+.w30{width: 30%;}
+.w40{width: 40%;}
+.w50{width: 50%;}
+.w60{width: 60%;}
+.w70{width: 70%;}
+.w80{width: 80%;}
+.w90{width: 90%;}
+.w100{width: 100%;}

@@ -4,19 +4,24 @@
   min-height: 100vh;
   margin: 0 auto;
 }
-#pieChart{
+#pieChart, .ringChart{
+	width: 200px;
+	height: 200px;
+}
+.barChart, #areaChart{
 	width: 300px;
-	height: 150px;
-	margin-left: auto;
-	margin-right: auto;
-	float: left;
+	height: 200px;
+}
+#lineChart{
+    width: 100%;
+    height: 200px;
 }
 
 .title{
 	padding: 2rem 0;
 	font-size: 2rem;
 	font-weight: bold;
-	border-bottom: 5px solid #23cbff;
+	border-bottom: .2rem solid #23cbff;
 	@include flex();
 	span{
 		padding: 0 2rem;
@@ -33,18 +38,92 @@
 }
 
 .con{
-	padding: 1rem 0;
+	flex-wrap: wrap;
+	padding: 2rem 0;
 	@include flex()
 }
-.box{
-	flex: 1;
-	padding: 2rem;
+.wrap{
+    flex: 1;
+    min-width: 25%;
     box-sizing: border-box;
-	@include box()
-    .box-title{
-    	color: #4666FF;
-    }
-    .box-con{
-    	@include flex();
+    padding: .2rem;
+    .box{
+        padding: 2rem;
+        box-sizing: border-box;
+        @include box();
+        .box-title{
+            padding-bottom: .8rem;
+            color: #4666FF;
+        }
+        .box-con{
+            &.flex{
+                @include flex();
+            }
+            .cate{
+                color: #66CCFF;
+                p{
+                    @include flex();
+                    padding: 1rem 0;
+                    white-space: nowrap; 
+                    span{
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        &.blue{
+                            color: #6BD0EA;
+                        }
+                        &.green{
+                            color: #30E237;
+                        }
+                        &.orange{
+                            color: #EC9337;
+                        }
+                    }
+                }
+            }
+        }
+        // 业绩增长
+        &.rise{
+            color: #fff;
+            .item{
+                display: flex;
+                justify-content: space-between;
+                padding: .3rem;
+                text-align: center;
+              p{
+                  flex: 1;
+                  &:nth-child(3),&:nth-child(4){
+                      padding: 0 .5rem;
+                  }
+                  .no{
+                      display: inline-block;
+                      width: 1rem;
+                      height: 1rem;
+                      line-height: 1rem;
+                      background: #ff3000;
+                      border-radius: 50%;
+                  }
+              }
+            }
+            .thead{
+                background: #07c9ff;
+            }
+            .tbody {
+                height: 180px;
+                overflow-y: scroll;
+                .item:nth-child(odd){
+                    background: #2b2554;
+                }
+            }
+        }
+        &.top{
+            text-align: center;
+            p{
+                display: flex;
+                padding: .3rem;
+                span{
+                    flex: 1;
+                }
+            }
+        }
     }
 }
