@@ -32,7 +32,7 @@ export default {
   components: {
     Title,
     Box1,
-    Box234,
+    Box2,
     Box5,
     Box6,
     Box7,

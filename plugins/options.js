@@ -2,29 +2,37 @@ export const options = {
   // 饼图
   pieOption: (data) => {
     return {
-      tooltip : {
-        trigger: 'item',
-        formatter: "{b}：{d}%"
-      },
-      series: [
-        {
-          name: '',
-          type: 'pie',
-          data: data,
-          startAngle: 190,
-          label: false
+      tooltip : {},
+      color:['#cd4261', '#227fe0','#24a8ae','#33a75b','#d6af36'],
+      series: [{
+        type: 'pie',
+        data: data,
+        startAngle: 190,
+        label: false,
+        itemStyle: {
+          normal: {
+              borderWidth: 1,
+              borderColor: '#fff',
+          }
         }
-      ]
+      }]
     }
   },
   // 横向柱状图
   barOption: (barcolor, cate, data) => {
     return {
       grid:{   //绘图区调整
-        x: 50,  //左
-        y: 0,   //上
-        x2: 8,  //右
-        y2: '10%'   //下
+        x: 0,  //左
+        y: 10,   //上
+        x2: 0,  //右
+        y2: 0,   //下
+        containLabel: true
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer : {
+          type : 'shadow'
+        }
       },
       xAxis : [{
         type: 'value',
@@ -38,7 +46,13 @@ export const options = {
           show: true,
           color: '#a5a5a5'
         },
-        boundaryGap: [0, 0.01]
+        splitLine:{ 
+          show:true, 
+          lineStyle:{ 
+            type:'dashed',
+            color: '#373741'
+          } 
+        }
       }],
       yAxis : [{
         type : 'category',
@@ -63,14 +77,80 @@ export const options = {
       animationDurationUpdate: 1000
     }
   },
+  // 区域图
+  areaOption: (cate, data) => {
+    return {
+      grid:{   //绘图区调整
+        x: 0,  //左
+        y: 10,   //上
+        x2: 0,  //右
+        y2: 12,   //下
+        containLabel: true
+      },
+      tooltip: {
+        // trigger: 'axis'
+      }, 
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: cate,
+        axisLine: {
+          show: true,
+          lineStyle : {
+            color : '#a5a5a5'
+          }
+        },
+        axisLabel: {
+          show: true,
+          interval:'0',
+          rotate: -40,
+          color: '#a5a5a5'
+        }
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel:{
+          textStyle:{
+            fontSize:'14',
+            color: "#a5a5a5"
+          }
+        },
+        splitLine:{ 
+          show:true, 
+          lineStyle:{ 
+            type:'dashed',
+            color: '#373741'
+          } 
+        }
+      },
+      series: [{
+        type: 'line',
+        data: data,
+        showSymbol: false,
+        areaStyle: {
+          color: 'rgba(0,141,255,.2)'
+        },
+        itemStyle: {
+          color: '#008dff'
+        },
+      }]
+    }
+  },
   // 竖向柱状图
   barOption2: (cate, data1, data2) => {
     return {
       grid:{   //绘图区调整
-        x: 50,  //左
+        x: 0,  //左
         y: 10,   //上
-        x2: 20,  //右
-        y2: '10%'   //下
+        x2: 0,  //右
+        y2: 0,   //下
+        containLabel: true
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer : {
+          type : 'shadow'
+        }
       },
       xAxis : [{
         type: 'category',
@@ -94,63 +174,39 @@ export const options = {
             fontSize:'14',
             color: "#a5a5a5"
           }
+        },
+        splitLine:{ 
+          show:true, 
+          lineStyle:{ 
+            type:'dashed',
+            color: '#373741'
+          } 
         }
       }],
       series : [{
         name: '订单数',
         type:'bar',
-        barWidth: 14,  //柱宽度
+        barWidth: 14, 
         data: data1,
+        stack: 'total',
         itemStyle:{
-          normal:{    //柱状图颜色
+          normal:{ 
             color: '#21a954'
           }
-        },
+        }
       },{
         name: '退单数',
         type:'bar',
-        barWidth: 14,  //柱宽度
+        barWidth: 14, 
         data: data2,
+        stack: 'total',
         itemStyle:{
-          normal:{    //柱状图颜色
+          normal:{
             color: '#0779e6'
           }
-        },
+        }
       }],
       animationDurationUpdate: 1000
-    }
-  },
-  // 区域图
-  areaOption: (cate, data) => {
-    return {
-      grid:{   //绘图区调整
-        x: 50,  //左
-        y: 20,   //上
-        x2: 0,  //右
-        y2: 20   //下
-      },
-      tooltip: {
-          trigger: 'axis'
-      }, 
-      xAxis: {
-          type: 'category',
-          boundaryGap: false,
-          data: cate
-      },
-      yAxis: {
-          type: 'value'
-      },
-      series: [{
-        name: '',
-        type: 'line',
-        data: data,
-        areaStyle: {
-          color: 'rgba(0,141,255,.2)'
-        },
-        itemStyle: {
-          color: '#008dff'
-        },
-      }]
     }
   },
   // 圆环
@@ -184,7 +240,13 @@ export const options = {
           type: 'pie',
           data: data,
           label: false,
-          radius: ['45%', '80%']
+          radius: ['45%', '80%'],
+          itemStyle: {
+            normal: {
+                borderWidth: 1,
+                borderColor: '#fff',
+            }
+          }
         }
       ]
     }

@@ -41,7 +41,7 @@ export default {
     echartsInit() {
       const _this = this
       const myChart = this.$echarts.init(document.getElementById(_this.chartid))
-      let cate = [], data = [], barcolor = ['#63b8e0', '#5cf100', '#e67300']
+      let cate = [], data = [], barcolor = ['#61dce2', '#5cf100', '#e67300']
       let id = _this.chartid.replace(/[^0-9]/ig,"") - 1;
       this.pdata.forEach(k => {
         cate.push(k.name)
