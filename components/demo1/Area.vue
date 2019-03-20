@@ -14,6 +14,9 @@
 import { options } from '~/plugins/options.js'
 export default {
 	props: {
+		title: {
+			type: String
+		},
 	  pdata: {
 	    type: Array,
 	    default: () => {
@@ -23,7 +26,6 @@ export default {
 	},
 	data() {
 	  return {
-	  	title: '总销量曲线'
 	  }
 	},
 	updated() {

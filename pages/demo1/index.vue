@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <Title :time="time" />
+    <Title :time="time" title="DEMO1" stitle="实时数据分析" />
     <div class="con">
       <pie :pdata="data1" title="各项占比" />
       <bar :pdata="data2" chartid="barChart1" title="数码类产品订单" />
       <bar :pdata="data3" chartid="barChart2" title="日用产品订单" />
       <bar :pdata="data4" chartid="barChart3" title="快消类产品订单" />
-      <areac :pdata="data5" />
+      <areac :pdata="data5" title="总销量曲线" />
       <bar2 :pdata="data6" chartid="barChart4" title="订单增长统计" />
       <rise :pdata="data7" title="业绩增长" />
       <top :pdata="data8" title="大额订单TOP6" />

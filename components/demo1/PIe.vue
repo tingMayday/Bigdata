@@ -38,6 +38,9 @@ export default {
   updated() {
     this.echartsInit()
   },
+  watch: {
+		pdata: 'echartsInit'
+	},
   methods: {
     echartsInit() {
       const _this = this

@@ -1,8 +1,8 @@
 <template>
   <div class="title">
     <p>
-      <span class="s-title">DEMO1</span>
-      <span>实时数据分析</span>
+      <span class="s-title">{{title}}</span>
+      <span>{{stitle}}</span>
     </p>
     <span class="time">{{ time }}</span>
   </div>
@@ -15,6 +15,14 @@ export default {
   },
   props: {
     time: {
+      type: String,
+      default: ''
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    stitle: {
       type: String,
       default: ''
     }
