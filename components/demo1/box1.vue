@@ -10,7 +10,7 @@
           <p>日用品：<span class="green">{{ pdata.daily }}</span></p>
           <p>快消类：<span class="orange">{{ pdata.consumer }}</span></p>
         </div>
-        <div id="pieChart" />
+        <div id="pieChart" class="demo1-chart" />
       </div>
     </div>
   </div>

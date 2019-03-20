@@ -5,11 +5,11 @@
         {{ title }}
       </p>
       <div class="box-con flex">
-        <div id="ringChart1" class="ringChart" />
-        <div id="ringChart2" class="ringChart" />
-        <div id="ringChart3" class="ringChart" />
-        <div id="ringChart4" class="ringChart" />
-        <div id="ringChart5" class="ringChart" />
+        <div id="ringChart1" class="demo1-chart ringChart" />
+        <div id="ringChart2" class="demo1-chart ringChart" />
+        <div id="ringChart3" class="demo1-chart ringChart" />
+        <div id="ringChart4" class="demo1-chart ringChart" />
+        <div id="ringChart5" class="demo1-chart ringChart" />
       </div>
     </div>
   </div>

@@ -17,42 +17,6 @@ export const options = {
       ]
     }
   },
-  // 圆环
-  ringOption: data => {
-    return {
-      title: {
-        text: data[0] + '%',
-        top:'44%',
-        left:'35%',
-        textStyle:{
-          color: '#6FD7FA',
-          fontWeight: 'bold',
-          fontSize: 18,
-        }
-      },
-      color:['#6FD7FA','#273e6f'],
-      grid:{   //绘图区调整
-        x: 50,  //左
-        y: 0,   //上
-        x2: 8,  //右
-        y2: '10%'   //下
-      },
-      legend: {
-        orient: 'vertical',
-        x: 'left',
-        data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
-      },
-      series: [
-        {
-          name: '山东',
-          type: 'pie',
-          data: data,
-          label: false,
-          radius: ['45%', '80%']
-        }
-      ]
-    }
-  },
   // 横向柱状图
   barOption: (barcolor, cate, data) => {
     return {
@@ -187,6 +151,42 @@ export const options = {
           color: '#008dff'
         },
       }]
+    }
+  },
+  // 圆环
+  ringOption: data => {
+    return {
+      title: {
+        text: data[0] + '%',
+        top:'44%',
+        left:'35%',
+        textStyle:{
+          color: '#6FD7FA',
+          fontWeight: 'bold',
+          fontSize: 18,
+        }
+      },
+      color:['#6FD7FA','#273e6f'],
+      grid:{   //绘图区调整
+        x: 50,  //左
+        y: 0,   //上
+        x2: 8,  //右
+        y2: '10%'   //下
+      },
+      legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+      },
+      series: [
+        {
+          name: '山东',
+          type: 'pie',
+          data: data,
+          label: false,
+          radius: ['45%', '80%']
+        }
+      ]
     }
   },
   // 线图
