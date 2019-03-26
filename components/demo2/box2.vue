@@ -1,28 +1,28 @@
 <template>
-	<div class="wrap">
-		<div class="box">
-            <p class="box-title">
-            {{ title }}
+	<div class="wrap box2-2">
+        <div class="box">
+            <p class="box-title">{{ title }}</p>
+            <p class="thead flex">
+                <span>渠道</span>
+                <span>工单数</span>
+                <span>同比</span>
             </p>
-            <div class="box-con">
-                <div class="table">
-                    <p class="thead">
-                        <span>渠道</span>
-                        <span>工单数</span>
-                        <span>同比</span>
-                    </p>
-                    <p v-for= "(item,index) in pdata" :key="index">
-                        <span>{{item.name}}</span>
-                        <span>{{item.value}}</span>
-                        <span>{{item.growth}}</span>
-                    </p>
-                </div>
-                <div class="piechart">
-                    <div id="pieChart" />
-                </div>
+        </div>
+         <div class="box box2-notop">
+            <p v-for= "(item,index) in pdata" :key="index">
+                <span>{{item.name}}</span>
+                <span>{{item.value}}</span>
+                <span v-if="item.growth > 0" class="rise">{{item.growth}}</span>
+                <span v-else-if="item.growth < 0" class="down">{{item.growth}}</span>
+                <span v-else>{{item.growth}}</span>
+            </p>
+        </div>
+         <div class="box box2-notop">
+            <div class="piechart">
+                <div id="pieChart" class="h300" />
             </div>
-		</div>
-  </div>
+        </div>
+    </div>
 </template>
 <script>
 import { options2 } from '~/plugins/options.js'

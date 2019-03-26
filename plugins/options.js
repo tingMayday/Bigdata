@@ -21,13 +21,7 @@ export const options = {
   // 横向柱状图
   barOption: (barcolor, cate, data) => {
     return {
-      grid:{   //绘图区调整
-        x: 0,  //左
-        y: 10,   //上
-        x2: 0,  //右
-        y2: 0,   //下
-        containLabel: true
-      },
+      grid:{ x: 0, y: 10, x2: 10, y2: 0, containLabel: true },
       tooltip: {
         trigger: 'axis',
         axisPointer : {
@@ -80,13 +74,7 @@ export const options = {
   // 区域图
   areaOption: (cate, data) => {
     return {
-      grid:{   //绘图区调整
-        x: 0,  //左
-        y: 10,   //上
-        x2: 0,  //右
-        y2: 12,   //下
-        containLabel: true
-      },
+      grid:{ x: 0, y: 10, x2: 25, y2: 12, containLabel: true },
       tooltip: {
         // trigger: 'axis'
       }, 
@@ -139,13 +127,7 @@ export const options = {
   // 竖向柱状图
   barOption2: (cate, data1, data2) => {
     return {
-      grid:{   //绘图区调整
-        x: 0,  //左
-        y: 10,   //上
-        x2: 0,  //右
-        y2: 0,   //下
-        containLabel: true
-      },
+      grid:{ x: 0, y: 10, x2: 10, y2: 0, containLabel: true },
       tooltip: {
         trigger: 'axis',
         axisPointer : {
@@ -213,9 +195,9 @@ export const options = {
   ringOption: data => {
     return {
       title: {
-        text: data[0] + '%',
+        text: data[0].value + '%',
         top:'44%',
-        left:'35%',
+        left:'38%',
         textStyle:{
           color: '#6FD7FA',
           fontWeight: 'bold',
@@ -223,28 +205,27 @@ export const options = {
         }
       },
       color:['#6FD7FA','#273e6f'],
-      grid:{   //绘图区调整
-        x: 50,  //左
-        y: 0,   //上
-        x2: 8,  //右
-        y2: '10%'   //下
-      },
+      grid:{ x: 0, y: 10, x2: 0, y2: 50, containLabel: true },
       legend: {
-        orient: 'vertical',
-        x: 'left',
-        data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+        icon: 'none',
+        bottom: 0,
+        left: '20%',
+        textStyle: {
+          fontSize: 14,
+          fontWeight: 'bold',
+          color: '#6FD7FA'
+       },
       },
       series: [
         {
-          name: '山东',
           type: 'pie',
           data: data,
           label: false,
           radius: ['45%', '80%'],
           itemStyle: {
             normal: {
-                borderWidth: 1,
-                borderColor: '#fff',
+              borderWidth: 1,
+              borderColor: '#fff',
             }
           }
         }
@@ -254,19 +235,16 @@ export const options = {
   // 线图
   lineOption: (cate, data1, data2) => {
     return {
+      grid: { x: 0, y: 10, x2: 10, y2: 40, containLabel: true },
       tooltip: {
           trigger: 'axis'
       },
       legend: {
-          // data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎'],
-          bottom: 0
-      },
-      grid: {
-          left: '3%',
-          right: '4%',
-          top: '3%',
-          bottom: '10%',
-          containLabel: true
+        icon: 'rec',
+        bottom: 0,
+        textStyle: {
+          color: '#8a8a8b'
+        }
       },
       xAxis: {
         type: 'category',
@@ -286,20 +264,39 @@ export const options = {
               fontSize:'14',
               color: "#a5a5a5"
             }
+          },
+          splitLine:{ 
+            show:true, 
+            lineStyle:{ 
+              type:'dashed',
+              color: '#b4b4c0'
+            } 
           }
       },
       series: [
           {
-              name:'tokyo',
-              type:'line',
-              stack: '总量',
-              data: data1
+            name:'tokyo',
+            type:'line',
+            data: data1,
+            symbolSize: 10,
+            itemStyle: {
+              normal: {
+                borderColor: '#fff',
+                color: '#2593fb'
+              }
+            }
           },
           {
-              name:'london',
-              type:'line',
-              stack: '总量',
-              data: data2
+            name:'london',
+            type:'line',
+            data: data2,
+            symbolSize: 10,
+            itemStyle: {
+              normal: {
+                borderColor: '#fff',
+                color: '#38c060'
+              }
+            }
           },
       ]
     }
@@ -309,24 +306,46 @@ export const options = {
 export const options2 = {
   pieOption: (data) => {
     return {
+      color: ['#2181e0', '#23a9ae', '#32a85b', '#d6b136', '#cc4361', '#7243c6'],
+      grid: { x: 0, y: 0, x2: 100, y2: 250, containLabel: true },
       tooltip : {
-        trigger: 'item',
-        formatter: "{b}：{d}%"
+        trigger: 'item'
       },
-      series: [
-        {
-          name: '',
-          type: 'pie',
-          data: data,
-          startAngle: 190,
-          label: false
+      legend: {
+        bottom: 0,
+        icon: 'circle',
+        // width: 10,
+        // padding: [100, 50, 0],
+        textStyle: {
+          color: '#707172'
         }
-      ]
+      },
+      series: [{
+        name: '',
+        type: 'pie',
+        data: data,
+        center : ['50%', '42%'],
+        itemStyle: {
+          normal: {
+            borderColor: '#fff'
+          }
+        },
+        label: {
+          normal: {
+              textStyle: {
+                  color: '#a6a6a6'
+              }
+          }
+        },
+      }]
+
     }
   },
+  // 竖向多组柱状图
   barOption: (data) => {
     return {
       color: ['#2183e3', '#32aa5e', '#d6b339', '#20336d', '#7245c9', '#26aeaf'],
+      grid: { x: 0, y: 10, x2: 0, y2: 50, containLabel: true },
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -334,73 +353,32 @@ export const options2 = {
         }
       },
       legend: {
-        data: ['wechart', 'email', 'telephone', 'people_com_cn', 'internet', 'mayor']
+        data: ['wechart', 'email', 'telephone', 'people_com_cn', 'internet', 'mayor'],
+        bottom: 0,
+        icon: 'rect',
+        textStyle: {
+          color: '#717273'
+        }
       },
-      toolbox: {
-        show: true,
-        orient: 'vertical',
-        left: 'right',
-        top: 'center'
-      },
-      calculable: true,
       xAxis: [
         {
           type: 'category',
           axisTick: {show: false},
-          data: data.cate
+          data: data.cate,
+          axisLine: {
+            show: true,
+            lineStyle : {
+              color : '#a5a5a5'
+            }
+          },
+          axisLabel: {
+            show: true,
+            color: '#a5a5a5'
+          }
         }
       ],
-      yAxis: [
-        {
-          type: 'value'
-        }
-      ],
-      series: [{
-          name: 'wechart',
-          type: 'bar',
-          barGap: 0,
-          label: 'labelOption',
-          data: data.wechart
-        }, {
-          name: 'email',
-          type: 'bar',
-          label: 'labelOption',
-          data: data.email
-        }, {
-          name: 'telephone',
-          type: 'bar',
-          label: 'labelOption',
-          data: data.telephone
-        }, {
-          name: 'people_com_cn',
-          type: 'bar',
-          label: 'labelOption',
-          data: data.people_com_cn
-      },{
-        name: 'internet',
-        type: 'bar',
-        label: 'labelOption',
-        data: data.internet
-      }, {
-        name: 'mayor',
-        type: 'bar',
-        label: 'labelOption',
-        data: data.mayor
-      }]
-    }
-  },
-  // 横向柱状图
-  barOption2: (type, cate, data) => {
-    return {
-      grid:{   //绘图区调整
-        x: 80,  //左
-        y: 0,   //上
-        x2: 8,  //右
-        y2: '10%'   //下
-      },
-      xAxis : [{
-        type: type.x,
-        data: cate,
+      yAxis: [{
+        type: 'value',
         axisLine: {
           show: true,
           lineStyle : {
@@ -411,7 +389,70 @@ export const options2 = {
           show: true,
           color: '#a5a5a5'
         },
-        boundaryGap: [0, 0.01]
+        splitLine:{ 
+          show:true, 
+          lineStyle:{ 
+            type:'dashed',
+            color: '#373741'
+          } 
+        }
+      }],
+      series: [{
+          name: 'wechart',
+          type: 'bar',
+          barWidth: 12,
+          barGap: 0,
+          data: data.wechart
+        }, {
+          name: 'email',
+          type: 'bar',
+          barWidth: 12,
+          data: data.email
+        }, {
+          name: 'telephone',
+          type: 'bar',
+          barWidth: 12,
+          data: data.telephone
+        }, {
+          name: 'people_com_cn',
+          type: 'bar',
+          barWidth: 12,
+          data: data.people_com_cn
+      },{
+        name: 'internet',
+        type: 'bar',
+        barWidth: 12,
+        data: data.internet
+      }, {
+        name: 'mayor',
+        type: 'bar',
+        barWidth: 12,
+        data: data.mayor
+      }]
+    }
+  },
+  // 柱状图
+  barOption2: (type, cate, data) => {
+    return {
+      grid:{ x: 0, y: 10, x2: 10, y2: 0, containLabel: true },
+      tooltip: {},
+      xAxis : [{
+        type: type.x,
+        data: cate,
+        axisLine: {
+          show: true
+        },
+        axisLabel: {
+          show: true,
+          color: '#a5a5a5'
+        },
+        splitLine:{ 
+          show:true, 
+          lineStyle:{ 
+            type:'dashed',
+            color: '#373741'
+          } 
+        }
       }],
       yAxis : [{
         type : type.y,
@@ -421,14 +462,27 @@ export const options2 = {
             fontSize:'14',
             color: "#a5a5a5"
           }
+        },
+        axisLine: {
+          show: true,
+          lineStyle : {
+            color : '#a5a5a5'
+          }
+        },
+        splitLine:{ 
+          show:true, 
+          lineStyle:{ 
+            type:'dashed',
+            color: '#373741'
+          } 
         }
       }],
       series : [{
         type:'bar',
-        barWidth: 14,  //柱宽度
+        // barWidth: 14,
         data: data,
         itemStyle:{
-          normal:{    //柱状图颜色
+          normal:{
             color: '#2181e0'
           }
         },
@@ -436,103 +490,129 @@ export const options2 = {
       animationDurationUpdate: 1000
     }
   },
+
    // 圆环
    ringOption: data => {
     return {
-      color:['#2181e0','#23a9ae','#32a85b','#d6b136','#cc4361'],
-      grid:{   //绘图区调整
-        x: 50,  //左
-        y: 0,   //上
-        x2: 8,  //右
-        y2: '10%'   //下
-      },
+      color:['#cc4361','#d6b136','#32a85b','#23a9ae','#2181e0'],
+      grid:{ x: 0, y: 0, x2: 0, y2: 0, containLabel: true },
       legend: {
-        orient: 'vertical',
-        x: 'left',
-        data:['其他','举报','投诉','建议','咨询']
-      },
-      series: [
-        {
-          name: '山东',
-          type: 'pie',
-          data: data,
-          label: false,
-          radius: ['45%', '80%']
+        left: 'center',
+        bottom: 0,
+        icon: 'circle',
+        data:['其他','举报','投诉','建议','咨询'],
+        textStyle: {
+          color: '#707172'
         }
-      ]
+      },
+      tooltip: {},
+      series: [{
+        type: 'pie',
+        data: data,
+        radius: ['40%', '70%'],
+        center: ['50%', '45%'],
+        itemStyle: {
+          normal: {
+            borderColor: '#fff'
+          }
+        },
+        label: {
+          normal: {
+              textStyle: {
+                  color: '#a6a6a6'
+              }
+          }
+        }
+      }]
     }
   },
 
   // 线图
   lineOption: (data) => {
     return {
+      color: ['#2593fb', '#38c060', '#f9cb34', '#233471', '#844add', '#27c2c1'],
+      grid:{ x: 0, y: 10, x2: 10, y2: 80, containLabel: true },
       tooltip: {
-          trigger: 'axis'
+        trigger: 'axis',
+        axisPointer: {
+          type: 'none'
+        }
       },
       legend: {
-          data:['wechart','email','telephone','people_com_cn','internet','mayor'],
-          bottom: 0
-      },
-      grid: {
-        left: '3%',
-        right: '4%',
-        top: '3%',
-        bottom: '10%',
-        containLabel: true
+        data:['wechart','email','telephone','people_com_cn','internet','mayor'],
+        bottom: 0,
+        icon: 'rect',
+        textStyle: {
+          color: '#707172'
+        }
       },
       xAxis: {
         type: 'category',
-        boundaryGap: false,
         data: data.cate,
         axisLine: {
-          show: true,
           lineStyle : {
-            color : '#a5a5a5'
+            color : '#3f455c'
+          }
+        },
+        axisLabel:{
+          interval: 0,  
+          textStyle:{
+            fontSize:'14',
+            color: "#a5a5a5"
           }
         },
       },
       yAxis: {
         type: 'value',
+        axisLine: {
+          show: false
+        },
         axisLabel:{
           textStyle:{
             fontSize:'14',
             color: "#a5a5a5"
           }
+        },
+        splitLine: {
+          lineStyle:{ 
+            type:'dashed',
+            color: '#373741'
+          } 
         }
       },
       series: [{
           name:'wechart',
           type:'line',
-          stack: '总量',
+          symbolSize: 8,
           data: data.wechart
         },
         {
           name:'email',
           type:'line',
-          stack: '总量',
+          symbolSize: 8,
           data: data.email
         },
         {
           name:'telephone',
           type:'line',
-          stack: '总量',
+          symbolSize: 8,
           data: data.telephone
         },
         {
           name:'people_com_cn',
           type:'line',
-          stack: '总量',
+          symbolSize: 8,
           data: data.people_com_cn
         },
         {
           name:'internet',
           type:'line',
-          stack: '总量',
+          symbolSize: 8,
           data: data.internet
         },{
           name:'mayor',
           type:'line',
-          stack: '总量',
+          symbolSize: 8,
           data: data.mayor
       }]
     }

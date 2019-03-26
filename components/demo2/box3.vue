@@ -1,10 +1,10 @@
 <template>
 	<div class="wrap">
 		<div class="box">
-            <div class="box-con flex">
-                <div v-for="(item,index) in pdata" :key="index">
+            <div class="box-con box2-3 flex">
+                <div class="item" v-for="(item,index) in pdata" :key="index">
+                    <p :class="'value ' + item.color">{{item.value}}</p>
                     <p>{{item.name}}</p>
-                    <p>{{item.value}}</p>
                 </div>
             </div>
 		</div>

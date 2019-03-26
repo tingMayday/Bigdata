@@ -84,11 +84,11 @@
 			{ "time": "1549016130", "goods": "物品6", "num": 58, "money": "831,958" }
 		],
 		"data9": [
-			{ "province": "山东", "percent": 27 },
-			{ "province": "湖南", "percent": 18 },
-			{ "province": "北京", "percent": 36 },
-			{ "province": "云南", "percent": 16 },
-			{ "province": "四川", "percent": 52 }
+			{ "name": "山东", "value": 27 },
+			{ "name": "湖南", "value": 18 },
+			{ "name": "北京", "value": 36 },
+			{ "name": "云南", "value": 16 },
+			{ "name": "四川", "value": 52 }
 		],
 		"data10": {
 			"cate": [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
@@ -105,19 +105,19 @@
 			"lastmonth": 1356
 		},
 		"data2": [
-			{ "name": "人民网", "value": 1000, "growth": 10.5 },
-			{ "name": "微信", "value": 1500, "growth": 8.5 },
-			{ "name": "邮件", "value": 500, "growth": 5 },
-			{ "name": "市长信箱", "value": 500, "growth": 5 },
-			{ "name": "网络", "value": 85, "growth": 0 },
-			{ "name": "电话", "value": 5, "growth": -10 }
+			{ "name": "人民网", "value": 1000, "growth": 10.5, "color": "#2181e0" },
+			{ "name": "市长信箱", "value": 500, "growth": 5, "color": "#23a9ae" },
+			{ "name": "微信", "value": 1500, "growth": 8.5, "color": "#32a85b" },
+			{ "name": "邮件", "value": 500, "growth": 5, "color": "#d6b136" },
+			{ "name": "网络", "value": 85, "growth": 0, "color": "#cc4361" },
+			{ "name": "电话", "value": 5, "growth": -10, "color": "#7243c6" }
 		],
 		"data3": [
-			{ "name": "数值1", "value": 1356 },
-			{ "name": "数值2", "value": 1356 },
-			{ "name": "数值3", "value": 1356 },
-			{ "name": "数值4", "value": 1356 },
-			{ "name": "数值5", "value": 1356 }
+			{ "name": "数值", "value": 1356, "color": "ced4a51" },
+			{ "name": "数值", "value": 1356, "color": "cfd8855" },
+			{ "name": "数值", "value": 1356, "color": "ccfb52b" },
+			{ "name": "数值", "value": 1356, "color": "c22cf8b" },
+			{ "name": "数值", "value": 1356, "color": "c3c7ef8" }
 		],
 		"data4": {
 			"cate": [ "历下区", "历城区", "槐荫区", "天桥区", "市中区", "高新区", "长清区" ],

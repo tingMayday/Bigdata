@@ -5,7 +5,7 @@
             {{ title }}
             </p>
             <div class="box-con">
-                <div id="barChart2" />
+                <div id="barChart2" class="h320" />
             </div>
 		</div>
   </div>

@@ -3,24 +3,24 @@
 	<div class="wrap">
 		<div class="box">
 	    <p class="box-title">
-	      {{ title }}
+				{{title}}
 	    </p>
-	    <div class="box-con">
+	    <div class="box-con seat flex">
 				<p>
 					<span>今日</span>
-					<span>{{pdata.today}}</span>
+					<span class="value ccfb52b">{{pdata.today}}</span>
 				</p>
 				<p>
 					<span>昨日</span>
-					<span>{{pdata.yesterday}}</span>
+					<span class="value c22cf8b">{{pdata.yesterday}}</span>
 				</p>
 				<p>
 					<span>本月</span>
-					<span>{{pdata.thismonth}}</span>
+					<span class="value c3c7ef8">{{pdata.thismonth}}</span>
 				</p>
 				<p>
 					<span>上月</span>
-					<span>{{pdata.lastmonth}}</span>
+					<span class="value ced4a51">{{pdata.lastmonth}}</span>
 				</p>
 	    </div>
 		</div>

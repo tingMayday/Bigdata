@@ -36,7 +36,6 @@ export default {
 	},
   methods: {
     echartsInit() {
-      console.log(this.pdata)
       const myChart = this.$echarts.init(document.getElementById('lineChart'))
       myChart.setOption(options.lineOption(this.pdata.cate, this.pdata.tokyo, this.pdata.london))
     }

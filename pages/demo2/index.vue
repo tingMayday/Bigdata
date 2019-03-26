@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container demo2-container">
     <Title :time="time" title="DEMO2" stitle="网络科技大数据看板DEMO" />
     <div class="con flex">
       <div class="left">

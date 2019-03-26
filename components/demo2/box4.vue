@@ -1,11 +1,11 @@
 <template>
 	<div class="wrap">
-		<div class="box">
+		<div class="box box2-4">
             <p class="box-title">
             {{ title }}
             </p>
             <div class="box-con">
-                <div id="barChart" />
+                <div id="barChart" class="h320" />
             </div>
 		</div>
   </div>

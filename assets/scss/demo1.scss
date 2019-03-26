@@ -2,18 +2,6 @@
     height: 250px;
     width: 100%;
 }
-// #pieChart, .ringChart{
-// 	width: 200px;
-// 	height: 200px;
-// }
-// .barChart, #areaChart{
-// 	width: 300px;
-// 	height: 200px;
-// }
-// #lineChart{
-//     width: 100%;
-//     height: 200px;
-// }
 
 .title{
 	padding: 2rem 0;
@@ -84,10 +72,13 @@
         // 业绩增长
         &.rise{
             color: #fff;
+            .box-con{
+                height: 250px;
+            }
             .item{
                 display: flex;
                 justify-content: space-between;
-                padding: .3rem;
+                padding: .5rem 0;
                 text-align: center;
               p{
                   flex: 1;
@@ -108,20 +99,24 @@
                 background: #07c9ff;
             }
             .tbody {
-                height: 180px;
+                height: 222px;
                 overflow-y: scroll;
-                .item:nth-child(odd){
-                    background: #2b2554;
+                &::-webkit-scrollbar {
+                    display: none;
                 }
             }
         }
         &.top{
-            text-align: center;
-            p{
-                display: flex;
-                padding: .3rem;
-                span{
-                    flex: 1;
+            .box-con{
+                height: 250px;
+                text-align: center;
+                box-sizing: border-box;
+                p{
+                    display: flex;
+                    padding: .75rem 0;
+                    span{
+                        flex: 1;
+                    }
                 }
             }
         }

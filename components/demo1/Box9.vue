@@ -42,7 +42,12 @@ export default {
     echartsInit() {
       const _this = this
       this.pdata.forEach((k, index) => {
-        let data = [k.percent, 100 - k.percent]
+        let data = [{
+          name: k.name,
+          value: k.value
+        },{
+          value: 100 - k.value
+        }]
         const myChart = this.$echarts.init(document.getElementById('ringChart' + (index + 1)))
         myChart.setOption(options.ringOption(data))
       })
